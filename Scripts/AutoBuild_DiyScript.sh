@@ -4,11 +4,11 @@
 
 Firmware_Diy_Core() {
 
-	Author=AUTO
+	Author=KHou_Cheang
 	Author_URL=AUTO
 	Default_Flag=AUTO
-	Default_IP="192.168.1.1"
-	Default_Title="Powered by AutoBuild-Actions"
+	Default_IP="10.10.10.1"
+	Default_Title="Powered by AutoBuild-Actions & coolsnowwolf/lede"
 
 	Short_Fw_Date=true
 	x86_Full_Images=false
