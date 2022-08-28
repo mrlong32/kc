@@ -1,15 +1,14 @@
 # OpenWrt-Actions & One-key AutoUpdate
 
+### 本AutoBuild基于 Hyy2001X/AutoBuild-Actions && coolsnowwolf/lede 基础上，仅针对新路由2与新路由3进行魔改，更多详情请访问以下链接
 
-AutoBuild-Actions 稳定版仓库地址: [AutoBuild-Actions-Template](https://github.com/Hyy2001X/AutoBuild-Actions-Template)
+Hyy2001X/AutoBuild-Actions仓库地址: [AutoBuild-Actions](https://github.com/Hyy2001X/AutoBuild-Actions)
 
-自用修改版软件包地址: [AutoBuild-Packages](https://github.com/Hyy2001X/AutoBuild-Packages)
+coolsnowwolf/lede仓库地址: [coolsnowwolf/lede](https://github.com/coolsnowwolf/lede)
 
 支持的 OpenWrt 源码: `coolsnowwolf/lede`、`immortalwrt/immortalwrt`、`openwrt/openwrt`、`lienol/openwrt`
 
-### 本AutoBuild基于 Hyy2001X/AutoBuild-Actions && coolsnowwolf/lede 基础上，仅针对新路由2与新路由3
-
-#### 使用本AutoBuild-Actions制作的bin文件默认输出至Release，固件默认管理IP 10.10.10.1 ，默认管理员root/password
+### 使用本AutoBuild-Actions制作的bin文件默认输出至Release，固件默认管理IP 10.10.10.1 ，默认管理员root/password
 
 ## 维护设备列表
 
