@@ -8,7 +8,7 @@ coolsnowwolf/lede仓库地址: [coolsnowwolf/lede](https://github.com/coolsnowwo
 
 支持的 OpenWrt 源码: `coolsnowwolf/lede`、`immortalwrt/immortalwrt`、`openwrt/openwrt`、`lienol/openwrt`
 
-### 使用本AutoBuild-Actions制作的bin文件默认输出至Release，固件默认管理IP 10.10.10.1 ，默认管理员root/password
+### 使用本AutoBuild-Actions制作的bin文件默认输出至Release,去除一键更新固件脚本，保留tools 固件工具箱，固件默认管理IP 10.10.10.1 ，默认管理员root/password
 
 ## 维护设备列表
 
@@ -32,7 +32,7 @@ coolsnowwolf/lede仓库地址: [coolsnowwolf/lede](https://github.com/coolsnowwo
 
 2. 编辑`/Configs`目录下的配置文件, 若配置文件不存在则需要在本地生成`.config`重命名并上传
 
-   请根据需要自定义.config
+   请根据需要自定义`.config`文件对LEDE固件进行个性化修改
 
 3. 编辑`/.github/workflows/某设备.yml`文件, 修改`第 7 行`为随便的名称
 
@@ -68,7 +68,7 @@ coolsnowwolf/lede仓库地址: [coolsnowwolf/lede](https://github.com/coolsnowwo
 
 ## 二、编译固件(必选)
 
-   **手动编译** 点击上方`Actions`, 在左栏选择要编译的设备,点击右方`Run workflow`再点击`绿色按钮`即可开始编译
+   **手动编译** 点击上方`Actions`, 在左栏选择要编译的设备,点击右方`Run workflow`再点击`绿色按钮`即可开始编译  //默认
 
    **一键编译** 删除`第 29-30 行`的注释并保存, 以后点击两次右上角的 **Star** 按钮即可一键编译
 
@@ -97,6 +97,8 @@ coolsnowwolf/lede仓库地址: [coolsnowwolf/lede](https://github.com/coolsnowwo
    - 打印在线设备列表
 
 ## 鸣谢
+
+   - [Hyy2001X/AutoBuild-Actions](https://github.com/Hyy2001X/AutoBuild-Actions)
 
    - [Lean's Openwrt Source code](https://github.com/coolsnowwolf/lede)
 
