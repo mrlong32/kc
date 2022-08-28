@@ -1,7 +1,5 @@
 # OpenWrt-Actions & One-key AutoUpdate
 
-![GitHub Stars](https://img.shields.io/github/stars/Hyy2001X/AutoBuild-Actions.svg?style=flat-square&label=Stars&logo=github)
-![GitHub Forks](https://img.shields.io/github/forks/Hyy2001X/AutoBuild-Actions.svg?style=flat-square&label=Forks&logo=github)
 
 AutoBuild-Actions 稳定版仓库地址: [AutoBuild-Actions-Template](https://github.com/Hyy2001X/AutoBuild-Actions-Template)
 
@@ -9,23 +7,19 @@ AutoBuild-Actions 稳定版仓库地址: [AutoBuild-Actions-Template](https://gi
 
 支持的 OpenWrt 源码: `coolsnowwolf/lede`、`immortalwrt/immortalwrt`、`openwrt/openwrt`、`lienol/openwrt`
 
-🔔 **Not a DaLao , just an User.**
+### 本AutoBuild基于 Hyy2001X/AutoBuild-Actions && coolsnowwolf/lede 基础上，仅针对新路由2与新路由3
 
 ## 维护设备列表
 
 | 机型 | 配置文件 | 自用 | 是否发布 |
 | :----: | :----: | :----: | :----: |
-| [x86_64](./.github/workflows/AutoBuild-x86_64.yml) | [x86_64](./Configs/x86_64) | ✅ | ❎ |
-| [新路由3](./.github/workflows/AutoBuild-d-team_newifi-d2.yml) | [d-team_newifi-d2](./Configs/d-team_newifi-d2) | ❎ | ✅ |
-| [华硕 acrh17](./.github/workflows/AutoBuild-asus_rt-acrh17.yml) | [asus_rt-acrh17](./Configs/asus_rt-acrh17) | ❎ | ❎ |
-| [竞斗云 2.0](./.github/workflows/AutoBuild-p2w_r619ac-128m.yml) | [p2w_r619ac-128m](./Configs/p2w_r619ac-128m) | ❎ | ❎ |
-| [红米 AC2100](./.github/workflows/AutoBuild-xiaomi_redmi-router-ac2100.yml) | [xiaomi_redmi-router-ac2100](./Configs/xiaomi_redmi-router-ac2100) | ❎ | ❎ |
-| [小娱C1/3/5](./.github/workflows/AutoBuild-xiaoyu_xy-c5.yml) | [xiaoyu_xy-c5](./Configs/xiaoyu_xy-c5) | ❎ | ✅ |
-| [红米 AX6S](./.github/workflows/AutoBuild-xiaomi_redmi-router-ax6s.yml) | [xiaomi_redmi-router-ax6s](./Configs/xiaomi_redmi-router-ax6s) | ✅ | ❎ |
+| [x86_64](./.github/workflows/AutoBuild-x86_64.yml) | [x86_64](./Configs/x86_64) | ❎ | ❎ |
+| [新路由3](./.github/workflows/AutoBuild-d-team_newifi-d2.yml) | [d-team_newifi-d2](./Configs/d-team_newifi-d2) | ✅ | ✅ |
+| [新路由2](./.github/workflows/AutoBuild-lenovo_newifi-d1.yml) | [lenovo_newifi-d1](./Configs/lenovo_newifi-d1) | ✅ | ✅ |
 
 ## 一、定制固件(可选)
 
-   🎈 **提示**: 文中的 **TARGET_PROFILE** 为要编译的设备名称, 例如: `d-team_newifi-d2`、`asus_rt-acrh17`
+   🎈 **提示**: 文中的 **TARGET_PROFILE** 为要编译的设备名称, 例如: `d-team_newifi-d2`、`lenovo_newifi-d1`
 
    从本地获取: 在源码目录执行`egrep -o "CONFIG_TARGET.*DEVICE.*=y" .config | sed -r 's/.*DEVICE_(.*)=y/\1/'`
    
@@ -37,9 +31,11 @@ AutoBuild-Actions 稳定版仓库地址: [AutoBuild-Actions-Template](https://gi
 
 2. 编辑`/Configs`目录下的配置文件, 若配置文件不存在则需要在本地生成`.config`重命名并上传
 
+   请根据需要自定义.config
+
 3. 编辑`/.github/workflows/某设备.yml`文件, 修改`第 7 行`为随便的名称
 
-4. 编辑`/.github/workflows/某设备.yml`文件, 修改`第 32 行`为上传的`.config`配置文件名称
+4. 编辑`/.github/workflows/某设备.yml`文件, 修改`第 38 行`为上传的`.config`配置文件名称
 
 5. 按照需求且编辑 [/Scripts/AutoBuild_DiyScript.sh](./Scripts/AutoBuild_DiyScript.sh), `/Scripts`下的其他文件无需修改
 
@@ -53,7 +49,7 @@ AutoBuild-Actions 稳定版仓库地址: [AutoBuild-Actions-Template](https://gi
 
    Default_Title Shell 终端首页显示的额外信息
 
-   Default_IP 固件 IP 地址
+   Default_IP 固件 IP 地址 //默认10.10.10.1
 
    Short_Fw_Date 简短的固件日期, 例如 true: [20210601]; false: [202106012359]
 
@@ -83,41 +79,6 @@ AutoBuild-Actions 稳定版仓库地址: [AutoBuild-Actions-Template](https://gi
 
    🔔 **为了你的账号安全, 请不要使用 SSH 连接 Github Action**, `.config`配置以及固件定制等操作请务必在本地完成 🔔
 
-## 三、部署云端日志(可选)
-
-1. 下载本仓库中的 [Update_Logs.json](https://github.com/Hyy2001X/AutoBuild-Actions/releases/download/AutoUpdate/Update_Logs.json) 到本地 (如果有)
-
-2. 以 **JSON** 格式编辑本地的`Update_Logs.json`
-
-3. 手动上传修改后的`Update_Logs.json`到`Github Release`
-
-4. 在本地执行`autoupdate --fw-log`测试
-
-## 使用一键更新固件脚本
-
-   首先需要打开`TTYD 终端`或者使用`SSH`, 按需输入下方指令:
-
-   常规更新固件: `autoupdate`
-
-   使用镜像加速更新固件: `autoupdate -P`
-
-   更新固件(不保留配置): `autoupdate -n`
-   
-   强制刷写固件(危险): `autoupdate -F`
-   
-   强制下载并刷写固件: `autoupdate -f`
-
-   更新脚本: `autoupdate -x`
-   
-   打印运行日志:  `autoupdate --log`
-
-   列出相关信息: `autoupdate --list`
-
-   检查运行环境: `autoupdate --chk`
-
-   查看脚本帮助: `autoupdate --help`
-
-   **注意:** 部分参数可一起使用, 例如 `autoupdate -n -P -F --path /mnt/sda1`
 
 ## 使用 tools 固件工具箱
 
