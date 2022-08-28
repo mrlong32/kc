@@ -9,6 +9,8 @@ AutoBuild-Actions 稳定版仓库地址: [AutoBuild-Actions-Template](https://gi
 
 ### 本AutoBuild基于 Hyy2001X/AutoBuild-Actions && coolsnowwolf/lede 基础上，仅针对新路由2与新路由3
 
+#### 使用本AutoBuild-Actions制作的bin文件默认输出至Release，固件默认管理IP 10.10.10.1 ，默认管理员root/password
+
 ## 维护设备列表
 
 | 机型 | 配置文件 | 自用 | 是否发布 |
