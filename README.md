@@ -1,6 +1,6 @@
 # LEDE固件Github- Actions在线云编译
 
-### 本AutoBuild基于 Hyy2001X/AutoBuild-Actions && coolsnowwolf/lede 基础上，仅针对新路由2与新路由3进行魔改，更多详情请访问以下链接
+### 本云编译基于 Hyy2001X/AutoBuild-Actions && coolsnowwolf/lede 基础上，仅针对新路由2与新路由3进行魔改，更多详情请访问以下链接
 
 Hyy2001X/AutoBuild-Actions仓库地址: [AutoBuild-Actions](https://github.com/Hyy2001X/AutoBuild-Actions)
 
