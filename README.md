@@ -17,6 +17,7 @@ coolsnowwolf/lede仓库地址: [coolsnowwolf/lede](https://github.com/coolsnowwo
 | [x86_64](./.github/workflows/AutoBuild-x86_64.yml) | [x86_64](./Configs/x86_64) | ❎ | ❎ |
 | [新路由3](./.github/workflows/AutoBuild-d-team_newifi-d2.yml) | [d-team_newifi-d2](./Configs/d-team_newifi-d2) | ✅ | ✅ |
 | [新路由2](./.github/workflows/AutoBuild-lenovo_newifi-d1.yml) | [lenovo_newifi-d1](./Configs/lenovo_newifi-d1) | ✅ | ✅ |
+| [zte_e8820s](./.github/workflows/AutoBuild-zte_e8820s.yml) | [zte_e8820s](./Configs/zte_e8820s) | ❎ | ❎ |
 
 ## 一、定制固件(可选)
 
